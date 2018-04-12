@@ -1,0 +1,8 @@
+[package]
+name = "rusty-steps"
+version = "0.0.1"
+authors = [ "ian klatzco <iklatzco@gmail.com>" ]
+
+[dependencies]
+glium = "*"
+
