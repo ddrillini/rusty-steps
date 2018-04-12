@@ -6,12 +6,13 @@
 extern crate glium;
 
 fn main() {
-    use glium::{glutin, Surface};
+    use glium::{glutin, Surface}; // rust "traits"
 
-    let mut events_loop = glutin::EventsLoop::new();
-    let window = glutin::WindowBuilder::new();
-    let context = glutin::ContextBuilder::new();
-    let display = glium::Display::new(window, context, &events_loop).unwrap();
+	// initialization
+	let mut events_loop = glutin::EventsLoop::new();
+	let window = glutin::WindowBuilder::new();
+	let context = glutin::ContextBuilder::new();
+	let display = glium::Display::new(window, context, &events_loop).unwrap();
 
 	let mut closed = false;
 	while !closed {
@@ -21,6 +22,7 @@ fn main() {
 		target.clear_color(0.0, 0.0, 1.0, 1.0);
 		target.finish().unwrap();
 
+		// event loop to stall and listen for "closed" event
 		// listing the events produced by application and waiting to be received
 		events_loop.poll_events(|ev| {
 			match ev {
